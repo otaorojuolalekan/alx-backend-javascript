@@ -4,19 +4,12 @@ export default class Currency {
     this.name = name;
   }
 
-  displayFullCurrency() {
-    return (`${this._name} (${this._code})`);
-  }
-
   // getter and setter functions
   get code() {
     return this._code;
   }
 
   set code(codeVal) {
-    if (typeof codeVal !== 'string') {
-      throw new TypeError('code must be a string');
-    }
     this._code = codeVal;
   }
 
@@ -25,9 +18,10 @@ export default class Currency {
   }
 
   set name(nameVal) {
-    if (typeof nameVal !== 'string') {
-      throw new TypeError('name must be a string');
-    }
     this._name = nameVal;
+  }
+
+  displayFullCurrency() {
+    return (`${this.name} (${this.code})`);
   }
 }
